@@ -4,10 +4,6 @@
 #define BUF_SIZE 1024
 
 bool is_vowel(char c) { 
-    /* 
-     * Returns true if c is a vowel (upper or lower case), and 
-     * false otherwise. 
-     */
 	switch(c){
 		case 'a':
 		case 'A':
