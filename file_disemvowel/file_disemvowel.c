@@ -48,6 +48,18 @@ void disemvowel(FILE* inputFile, FILE* outputFile) {
      * in a buffer of data, copy the non-vowels to the output buffer, and
      * use fwrite to write that out. 
      */
+	char inbuffer[BUF_SIZE+1];
+	char outbuffer[BUF_SIZE+1];
+	int nRead = 1024;
+
+	fp = fopen("inputFile","r");
+	fw = fopen("outputFile","w+");
+	while(nRead < 1024){
+	nRead=fread(inbuffer, sizeof(char) , BUF_SIZE, fp);
+	wSize= copy_non_vowels(nRead,inbuffer,outbuffer);
+	fwrite(outbuffer,sizeof(char),wSize,fw);
+	}
+
 
 }
 
